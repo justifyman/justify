@@ -2,9 +2,9 @@ import { FC } from "react";
 
 const Projects: FC = () => {
   return (
-    <div className="min-h-screen flex flex-col justify-center relative p-60">
+    <div className="min-h-screen flex flex-col justify-center relative p-4 md:p-60">
       <div className="space-y-8">
-        <h2 className="text-6xl font-small text-white tracking-tight">
+        <h2 className="text-3xl md:text-6xl font-small text-white tracking-tight">
           My <span className="text-[#7c8fff]">Projects</span>
         </h2>
 
@@ -22,7 +22,7 @@ const Projects: FC = () => {
                 <h3 className="text-xl font-semibold text-white mb-2 transition-colors duration-300 hover:text-[#7c8fff]">
                   muslimthread
                 </h3>
-                <p className="text-gray-400 text-xl leading-relaxed transition-colors duration-300 hover:text-gray-300">
+                <p className="text-gray-400 text-base md:text-xl leading-relaxed transition-colors duration-300 hover:text-gray-300">
                   Your comprehensive resource hub for Islamic knowledge,
                   learning materials, and scholarly works. Made with React &
                   Tailwind
@@ -44,7 +44,7 @@ const Projects: FC = () => {
                 <h3 className="text-xl font-semibold text-white mb-2 transition-colors duration-300 hover:text-[#7c8fff]">
                   Coming Soon 👀
                 </h3>
-                <p className="text-gray-400 text-xl leading-relaxed transition-colors duration-300 hover:text-gray-300">
+                <p className="text-gray-400 text-base md:text-xl leading-relaxed transition-colors duration-300 hover:text-gray-300">
                   ...
                   <br />
                   <br />
