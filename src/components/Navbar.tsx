@@ -39,25 +39,25 @@ const Navbar: FC = () => {
       {/* Desktop Menu */}
       <div className="hidden md:flex gap-5 px-20">
         <a
-          href="#"
+          href="#hero"
           className="text-gray-400 hover:text-gray-300 transition-colors"
         >
           home
         </a>
         <a
-          href="#"
+          href="#about"
           className="text-gray-400 hover:text-gray-300 transition-colors"
         >
           about
         </a>
         <a
-          href="#"
+          href="#projects"
           className="text-gray-400 hover:text-gray-300 transition-colors"
         >
           projects
         </a>
         <a
-          href="#"
+          href="#contact"
           className="text-gray-400 hover:text-gray-300 transition-colors"
         >
           contact
@@ -69,25 +69,25 @@ const Navbar: FC = () => {
         <div className="absolute top-full left-0 right-0 bg-[#0a0a13]/95 backdrop-blur-sm md:hidden py-4">
           <div className="flex flex-col items-center gap-4">
             <a
-              href="#"
+              href="#hero"
               className="text-gray-400 hover:text-gray-300 transition-colors"
             >
               home
             </a>
             <a
-              href="#"
+              href="#about"
               className="text-gray-400 hover:text-gray-300 transition-colors"
             >
               about
             </a>
             <a
-              href="#"
+              href="#projects"
               className="text-gray-400 hover:text-gray-300 transition-colors"
             >
               projects
             </a>
             <a
-              href="#"
+              href="#contact"
               className="text-gray-400 hover:text-gray-300 transition-colors"
             >
               contact
