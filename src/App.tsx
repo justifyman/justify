@@ -13,10 +13,18 @@ function App() {
     <PageTransition>
       <div className="bg-[#0a0a13] min-h-screen">
         <Navbar />
-        <Hero />
-        <About />
-        <Projects />
-        <Contact />
+        <div id="hero">
+          <Hero />
+        </div>
+        <div id="about">
+          <About />
+        </div>
+        <div id="projects">
+          <Projects />
+        </div>
+        <div id="contact">
+          <Contact />
+        </div>
         <Footer />
       </div>
     </PageTransition>
