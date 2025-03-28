@@ -5,7 +5,7 @@ const Navbar: FC = () => {
 
   return (
     <nav className="fixed top-0 left-0 right-0 px-4 md:px-60 py-4 md:py-9 flex justify-between items-center z-50 bg-[#0a0a13]/80 backdrop-blur-sm">
-      <div className="text-white text-xl md:text-2xl font-medium">justify</div>
+     <a href="#"><div className="text-white text-xl md:text-2xl font-medium">justify</div></a>
 
       {/* Mobile Menu Button */}
       <button
