@@ -35,6 +35,25 @@ const Projects: FC = () => {
             <div className="bg-[#1a1a2e] rounded-lg overflow-hidden shadow-xl transform transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl hover:shadow-[#7c8fff]/20 hover:bg-[#1a1a2e]/90">
               <div className="h-64 bg-gray-700 transition-transform duration-300 group-hover:scale-105">
                 <img
+                  src="Images/image_2025-04-03_192656122.png"
+                  alt=""
+                  className="transition-opacity duration-300 hover:opacity-90"
+                />
+              </div>
+              <div className="p-6 bg-[#1a1a2e]/80 backdrop-blur-sm transition-all duration-300 hover:bg-[#1a1a2e]/90">
+                <h3 className="text-xl font-semibold text-white mb-2 transition-colors duration-300 hover:text-[#7c8fff]">
+                  NoorNet
+                </h3>
+                <p className="text-gray-400 text-base md:text-xl leading-relaxed transition-colors duration-300 hover:text-gray-300">
+                  Finally, an Islamic search engine that is fast, trusted, and easy to use. Made using Google's programmable search API, ReactJS, TailwindCSS
+                </p>
+              </div>
+            </div>
+          </a>
+          <a href="#">
+            <div className="bg-[#1a1a2e] rounded-lg overflow-hidden shadow-xl transform transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl hover:shadow-[#7c8fff]/20 hover:bg-[#1a1a2e]/90">
+              <div className="h-64 bg-gray-700 transition-transform duration-300 group-hover:scale-105">
+                <img
                   src="Images/comingsoon.png"
                   alt=""
                   className="transition-opacity duration-300 hover:opacity-90"
