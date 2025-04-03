@@ -31,7 +31,7 @@ const Projects: FC = () => {
             </div>
           </a>
 
-          <a href="#">
+          <a href="https://noornet.vercel.app">
             <div className="bg-[#1a1a2e] rounded-lg overflow-hidden shadow-xl transform transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl hover:shadow-[#7c8fff]/20 hover:bg-[#1a1a2e]/90">
               <div className="h-64 bg-gray-700 transition-transform duration-300 group-hover:scale-105">
                 <img
