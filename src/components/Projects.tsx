@@ -50,7 +50,7 @@ const Projects: FC = () => {
               </div>
             </div>
           </a>
-          <a href="https://noornet.vercel.app">
+          <a href="https://www.ijaba.app/">
             <div className="bg-[#1a1a2e] rounded-lg overflow-hidden shadow-xl transform transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl hover:shadow-[#7c8fff]/20 hover:bg-[#1a1a2e]/90">
               <div className="h-64 bg-gray-700 transition-transform duration-300 group-hover:scale-105">
                 <img
@@ -64,7 +64,7 @@ const Projects: FC = () => {
                   Ijaba
                 </h3>
                 <p className="text-gray-400 text-base md:text-xl leading-relaxed transition-colors duration-300 hover:text-gray-300">
-                  Let the Quran Talk to You - Client site made with ReactJS and TailwindCSS
+                  Let the Quran Talk to You - Client site made with ReactJS and TailwindCSS. App available on App Store (iOS).
                 </p>
               </div>
             </div>
