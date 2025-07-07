@@ -14,7 +14,7 @@ const Contact: FC = () => {
             Let's work <span className="text-[#7c8fff]">together</span>.
           </h2>
           <p className="text-gray-400 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed">
-            I'm currently available for freelance work and open to discussing new projects.
+            I'm available for freelance work and open to discussing new projects.
             <br />
             Ready to bring your ideas to life.
           </p>
