@@ -64,7 +64,7 @@ const Contact: FC = () => {
               </svg>
             </div>
             <h3 className="text-white text-xl mb-2 font-medium">Discord</h3>
-            <p className="text-gray-400 text-sm">Let's chat</p>
+            <p className="text-gray-400 text-sm">justifyman</p>
           </a>
 
           {/* Instagram */}
