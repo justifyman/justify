@@ -29,14 +29,7 @@ const About: FC = () => {
   ];
 
   return (
-    <div id="about-section" className="min-h-screen relative overflow-hidden bg-gradient-to-br from-[#0a0a13] via-[#0f0f1e] to-[#1a1a2e]">
-      {/* Animated background elements */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute -top-40 -right-40 w-80 h-80 bg-[#7c8fff]/10 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute -bottom-40 -left-40 w-96 h-96 bg-purple-500/5 rounded-full blur-3xl animate-pulse delay-1000"></div>
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-blue-500/5 rounded-full blur-2xl animate-pulse delay-500"></div>
-      </div>
-
+    <div id="about-section" className="min-h-screen relative overflow-hidden bg-[#0a0a13]">
       {/* Grid pattern overlay */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#1a1a2e_1px,transparent_1px),linear-gradient(to_bottom,#1a1a2e_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_at_center,black_50%,transparent_80%)] opacity-30"></div>
 
@@ -47,10 +40,7 @@ const About: FC = () => {
             <div className={`transform transition-all duration-1000 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-20 opacity-0'}`}>
               <h2 className="text-4xl md:text-7xl lg:text-8xl font-light text-white tracking-tight leading-tight mb-6">
                 About{" "}
-                <span className="relative inline-block">
-                  <span className="text-[#7c8fff] relative z-10">Me</span>
-                  <div className="absolute inset-0 bg-[#7c8fff]/20 blur-xl rounded-lg transform scale-110"></div>
-                </span>
+                <span className="text-[#7c8fff]">Me</span>
               </h2>
             </div>
             
@@ -75,7 +65,7 @@ const About: FC = () => {
               <h3 className="text-2xl md:text-3xl font-medium text-white mb-8">Experience & Impact</h3>
               <div className="grid grid-cols-2 gap-8">
                 <div className="group">
-                  <div className="bg-gradient-to-br from-[#1a1a2e] to-[#2a2a3e] p-6 rounded-2xl border border-[#7c8fff]/20 hover:border-[#7c8fff]/40 transition-all duration-300 hover:transform hover:scale-105">
+                  <div className="bg-[#1a1a2e] p-6 rounded-2xl border border-[#7c8fff]/20 hover:border-[#7c8fff]/40 transition-all duration-300 hover:transform hover:scale-105">
                     <div className="text-4xl md:text-6xl font-bold text-[#7c8fff] mb-2 group-hover:text-white transition-colors">
                       3+
                     </div>
@@ -86,7 +76,7 @@ const About: FC = () => {
                 </div>
                 
                 <div className="group">
-                  <div className="bg-gradient-to-br from-[#1a1a2e] to-[#2a2a3e] p-6 rounded-2xl border border-purple-500/20 hover:border-purple-500/40 transition-all duration-300 hover:transform hover:scale-105">
+                  <div className="bg-[#1a1a2e] p-6 rounded-2xl border border-purple-500/20 hover:border-purple-500/40 transition-all duration-300 hover:transform hover:scale-105">
                     <div className="text-4xl md:text-6xl font-bold text-purple-400 mb-2 group-hover:text-white transition-colors">
                       15+
                     </div>
@@ -97,7 +87,7 @@ const About: FC = () => {
                 </div>
                 
                 <div className="group">
-                  <div className="bg-gradient-to-br from-[#1a1a2e] to-[#2a2a3e] p-6 rounded-2xl border border-blue-500/20 hover:border-blue-500/40 transition-all duration-300 hover:transform hover:scale-105">
+                  <div className="bg-[#1a1a2e] p-6 rounded-2xl border border-blue-500/20 hover:border-blue-500/40 transition-all duration-300 hover:transform hover:scale-105">
                     <div className="text-4xl md:text-6xl font-bold text-blue-400 mb-2 group-hover:text-white transition-colors">
                       6+
                     </div>
@@ -108,7 +98,7 @@ const About: FC = () => {
                 </div>
                 
                 <div className="group">
-                  <div className="bg-gradient-to-br from-[#1a1a2e] to-[#2a2a3e] p-6 rounded-2xl border border-green-500/20 hover:border-green-500/40 transition-all duration-300 hover:transform hover:scale-105">
+                  <div className="bg-[#1a1a2e] p-6 rounded-2xl border border-green-500/20 hover:border-green-500/40 transition-all duration-300 hover:transform hover:scale-105">
                     <div className="text-4xl md:text-6xl font-bold text-green-400 mb-2 group-hover:text-white transition-colors">
                       100%
                     </div>
@@ -135,8 +125,7 @@ const About: FC = () => {
                         className="h-full rounded-full transition-all duration-1000 ease-out"
                         style={{ 
                           width: isVisible ? `${skill.level}%` : '0%',
-                          backgroundColor: skill.color,
-                          boxShadow: `0 0 10px ${skill.color}40`
+                          backgroundColor: skill.color
                         }}
                       ></div>
                     </div>
@@ -151,7 +140,7 @@ const About: FC = () => {
             <h3 className="text-2xl md:text-3xl font-medium text-white mb-8 text-center">What I Do Best</h3>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               <div className="group relative">
-                <div className="bg-gradient-to-br from-[#1a1a2e] via-[#2a2a3e] to-[#1a1a2e] p-8 rounded-2xl border border-[#7c8fff]/20 hover:border-[#7c8fff]/40 transition-all duration-500 hover:transform hover:scale-105 hover:rotate-1">
+                <div className="bg-[#1a1a2e] p-8 rounded-2xl border border-[#7c8fff]/20 hover:border-[#7c8fff]/40 transition-all duration-500 hover:transform hover:scale-105 hover:rotate-1">
                   <div className="text-5xl mb-6 group-hover:scale-110 transition-transform duration-300">⚡</div>
                   <h4 className="text-xl font-semibold text-white mb-4 group-hover:text-[#7c8fff] transition-colors">
                     Frontend Development
@@ -159,12 +148,11 @@ const About: FC = () => {
                   <p className="text-gray-400 leading-relaxed group-hover:text-gray-300 transition-colors">
                     Creating lightning-fast, responsive web applications with modern frameworks and cutting-edge technologies.
                   </p>
-                  <div className="absolute inset-0 bg-gradient-to-br from-[#7c8fff]/5 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 </div>
               </div>
 
               <div className="group relative">
-                <div className="bg-gradient-to-br from-[#1a1a2e] via-[#2a2a3e] to-[#1a1a2e] p-8 rounded-2xl border border-purple-500/20 hover:border-purple-500/40 transition-all duration-500 hover:transform hover:scale-105 hover:-rotate-1">
+                <div className="bg-[#1a1a2e] p-8 rounded-2xl border border-purple-500/20 hover:border-purple-500/40 transition-all duration-500 hover:transform hover:scale-105 hover:-rotate-1">
                   <div className="text-5xl mb-6 group-hover:scale-110 transition-transform duration-300">🎨</div>
                   <h4 className="text-xl font-semibold text-white mb-4 group-hover:text-purple-400 transition-colors">
                     UI/UX Design
@@ -172,12 +160,11 @@ const About: FC = () => {
                   <p className="text-gray-400 leading-relaxed group-hover:text-gray-300 transition-colors">
                     Designing intuitive, user-centric interfaces that provide exceptional user experiences and drive engagement.
                   </p>
-                  <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 </div>
               </div>
 
               <div className="group relative">
-                <div className="bg-gradient-to-br from-[#1a1a2e] via-[#2a2a3e] to-[#1a1a2e] p-8 rounded-2xl border border-blue-500/20 hover:border-blue-500/40 transition-all duration-500 hover:transform hover:scale-105 hover:rotate-1">
+                <div className="bg-[#1a1a2e] p-8 rounded-2xl border border-blue-500/20 hover:border-blue-500/40 transition-all duration-500 hover:transform hover:scale-105 hover:rotate-1">
                   <div className="text-5xl mb-6 group-hover:scale-110 transition-transform duration-300">📱</div>
                   <h4 className="text-xl font-semibold text-white mb-4 group-hover:text-blue-400 transition-colors">
                     Responsive Design
@@ -185,7 +172,6 @@ const About: FC = () => {
                   <p className="text-gray-400 leading-relaxed group-hover:text-gray-300 transition-colors">
                     Building websites that look stunning and perform flawlessly across all devices and screen sizes.
                   </p>
-                  <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 </div>
               </div>
             </div>
@@ -198,7 +184,7 @@ const About: FC = () => {
             </p>
             <a 
               href="#contact" 
-              className="inline-flex items-center gap-3 bg-gradient-to-r from-[#7c8fff] to-purple-500 text-white px-8 py-4 rounded-full font-medium hover:from-purple-500 hover:to-[#7c8fff] transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-[#7c8fff]/25"
+              className="inline-flex items-center gap-3 bg-gradient-to-r from-[#7c8fff] to-purple-500 text-white px-8 py-4 rounded-full font-medium hover:from-purple-500 hover:to-[#7c8fff] transition-all duration-300 hover:scale-105"
             >
               Let's Work Together
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
