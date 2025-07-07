@@ -61,7 +61,7 @@ const About: FC = () => {
                 I'm a passionate{" "}
                 <span className="text-[#7c8fff] font-medium relative">
                   front-end developer
-                  <div className="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-[#7c8fff] to-transparent"></div>
+                  <span className="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-[#7c8fff] to-transparent"></span>
                 </span>{" "}
                 with over 3 years of experience crafting digital experiences that blend{" "}
                 <span className="text-white font-medium">creativity</span> with{" "}
