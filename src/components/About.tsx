@@ -22,7 +22,7 @@ const About: FC = () => {
           </div>
 
           {/* Stats */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-16">
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-8 mb-16">
             <div className="text-center">
               <div className="text-3xl md:text-4xl font-bold text-[#7c8fff] mb-2">3+</div>
               <div className="text-gray-400 text-sm md:text-base">Years Experience</div>
