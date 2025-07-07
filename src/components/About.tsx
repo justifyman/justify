@@ -66,7 +66,7 @@ const About: FC = () => {
             </div>
             <div className="space-y-1 md:space-y-2">
               <h3 className="text-[#7c8fff] text-3xl md:text-5xl font-bold">
-                15+
+                Several
               </h3>
               <p className="text-gray-400 text-sm md:text-base">Projects completed</p>
             </div>
