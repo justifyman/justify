@@ -41,14 +41,7 @@ const About: FC = () => {
       
       <div className="relative z-10 w-full p-4 md:p-20 lg:p-60">
         <div className="max-w-6xl mx-auto">
-          
-          {/* Header Section */}
-          <div className={`text-center mb-16 transform transition-all duration-1000 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-20 opacity-0'}`}>
-            <h2 className="text-3xl md:text-6xl font-small text-white tracking-tight mb-6">
-              About <span className="text-[#7c8fff]">Me</span>
-            </h2>
-            <div className="w-24 h-1 bg-[#7c8fff] mx-auto rounded-full"></div>
-          </div>
+
 
           {/* Main Content Grid */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center mb-20">
