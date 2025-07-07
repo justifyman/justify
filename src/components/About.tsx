@@ -28,10 +28,6 @@ const About: FC = () => {
               <div className="text-gray-400 text-sm md:text-base">Years Experience</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl md:text-4xl font-bold text-[#7c8fff] mb-2">15+</div>
-              <div className="text-gray-400 text-sm md:text-base">Projects</div>
-            </div>
-            <div className="text-center">
               <div className="text-3xl md:text-4xl font-bold text-[#7c8fff] mb-2">4+</div>
               <div className="text-gray-400 text-sm md:text-base">Technologies</div>
             </div>
