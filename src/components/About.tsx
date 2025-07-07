@@ -53,9 +53,7 @@ const About: FC = () => {
                   Crafting Digital Experiences Since 2022
                 </h3>
                 <p className="text-gray-400 text-base md:text-lg leading-relaxed">
-                  I'm a passionate front-end developer who transforms ideas into stunning, 
-                  interactive web experiences. My journey began with curiosity about how 
-                  websites work, and has evolved into a deep expertise in modern web technologies.
+                   I'm a front-end developer turning ideas into interactive, responsive, and visually engaging websites using modern web technologies.
                 </p>
                 <p className="text-gray-400 text-base md:text-lg leading-relaxed">
                   I specialize in creating responsive, user-friendly interfaces that not only 
