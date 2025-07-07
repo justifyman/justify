@@ -23,11 +23,10 @@ const About: FC = () => {
 
   const skills = [
     { name: "React", level: 95, color: "#61DAFB" },
-    { name: "TypeScript", level: 90, color: "#3178C6" },
-    { name: "Tailwind CSS", level: 98, color: "#06B6D4" },
-    { name: "JavaScript", level: 92, color: "#F7DF1E" },
-    { name: "HTML/CSS", level: 96, color: "#E34F26" },
-    { name: "Node.js", level: 85, color: "#339933" }
+    { name: "Tailwind CSS", level: 100, color: "#06B6D4" },
+    { name: "JavaScript", level: 95, color: "#F7DF1E" },
+    { name: "HTML/CSS", level: 100, color: "#E34F26" },
+    { name: "Node.js", level: 75, color: "#339933" }
   ];
 
   return (
