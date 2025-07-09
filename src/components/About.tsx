@@ -57,7 +57,7 @@ const About: FC = () => {
                   <h3 className="text-xl font-medium text-white mb-4">My Journey</h3>
                   <div className="text-gray-300 leading-relaxed text-sm">
                     <p className="mb-3">
-                      Started web development in 2020, evolving from simple HTML pages 
+                      Started web development in 2021, evolving from simple HTML pages 
                       to building complex React applications. I specialize in modern 
                       JavaScript and have a keen eye for design and user experience.
                     </p>
