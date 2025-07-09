@@ -10,7 +10,6 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@studio-freight/lenis": "^1.0.42",
     "@tailwindcss/postcss": "^4.1.11",
     "@types/prismjs": "^1.26.5",
     "prismjs": "^1.30.0",
