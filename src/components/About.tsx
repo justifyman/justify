@@ -18,7 +18,7 @@ const About: FC = () => {
     {
       year: "2021-2022",
       title: "Learning Phase",
-      description: "Mastered HTML, CSS, and JavaScript fundamentals",
+      description: "Mastering HTML, CSS, and JavaScript fundamentals",
       highlight: false
     },
     {
