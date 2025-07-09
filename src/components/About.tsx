@@ -77,8 +77,8 @@ const About: FC = () => {
                   <div className="text-gray-400 text-xs">Years</div>
                 </div>
                 <div className="bg-[#1a1a2e]/60 backdrop-blur-sm p-4 rounded-lg border border-gray-800/50 text-center group hover:border-[#7c8fff]/30 transition-all duration-300">
-                  <div className="text-2xl font-bold text-[#7c8fff] mb-1">Several</div>
-                  <div className="text-gray-400 text-xs">Projects</div>
+                  <div className="text-2xl font-bold text-[#7c8fff] mb-1">5+</div>
+                  <div className="text-gray-400 text-xs">Technologies</div>
                 </div>
               </div>
 
