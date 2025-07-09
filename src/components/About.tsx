@@ -40,7 +40,7 @@ const About: FC = () => {
               <span className="text-[#7c8fff]">Experiences</span>
             </h2>
             <p className="text-gray-400 text-base md:text-lg max-w-2xl mx-auto leading-relaxed">
-              Frontend developer with 3+ years of experience creating beautiful, 
+              Frontend developer with 4+ years of experience creating beautiful, 
               functional digital experiences.
             </p>
           </div>
