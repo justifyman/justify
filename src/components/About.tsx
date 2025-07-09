@@ -136,20 +136,25 @@ const About: FC = () => {
               {/* Experience Timeline */}
               <div className="bg-gradient-to-br from-[#1a1a2e]/80 to-[#1a1a2e]/40 backdrop-blur-sm p-8 rounded-2xl border border-gray-800/50">
                 <h3 className="text-2xl font-medium text-white mb-8">Experience Timeline</h3>
-                <div className="space-y-8">
+                <div className="relative">
                   {experiences.map((exp, index) => (
-                    <div key={index} className="flex gap-6 group">
-                      <div className="flex flex-col items-center flex-shrink-0 w-6">
+                    <div key={index} className="relative pl-8 pb-8 last:pb-0 group">
+                      {/* Timeline line */}
+                      {index < experiences.length - 1 && (
+                        <div className="absolute left-2 top-6 w-0.5 h-full bg-gray-700"></div>
+                      )}
+                      
+                      {/* Timeline dot */}
+                      <div className="absolute left-0 top-2">
                         <div className={`w-4 h-4 rounded-full border-2 ${
                           exp.highlight 
                             ? 'bg-[#7c8fff] border-[#7c8fff]' 
                             : 'bg-transparent border-gray-600'
                         } group-hover:scale-125 transition-transform duration-300`}></div>
-                        {index < experiences.length - 1 && (
-                          <div className="w-0.5 h-20 bg-gray-700 mt-2"></div>
-                        )}
                       </div>
-                      <div className="flex-1 min-w-0">
+                      
+                      {/* Content */}
+                      <div>
                         <div className="text-[#7c8fff] text-sm font-medium mb-1">{exp.year}</div>
                         <h4 className="text-white font-medium mb-2">{exp.title}</h4>
                         <p className="text-gray-400 text-sm leading-relaxed">{exp.description}</p>
