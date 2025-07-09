@@ -136,23 +136,23 @@ const About: FC = () => {
               {/* Experience Timeline */}
               <div className="bg-gradient-to-br from-[#1a1a2e]/80 to-[#1a1a2e]/40 backdrop-blur-sm p-8 rounded-2xl border border-gray-800/50">
                 <h3 className="text-2xl font-medium text-white mb-8">Experience Timeline</h3>
-                <div className="space-y-6">
+                <div className="space-y-6 relative">
                   {experiences.map((exp, index) => (
-                    <div key={index} className="flex gap-4 group">
-                      <div className="flex flex-col items-center">
+                    <div key={index} className="flex gap-4 group relative">
+                      <div className="flex flex-col items-center flex-shrink-0">
                         <div className={`w-4 h-4 rounded-full border-2 ${
                           exp.highlight 
                             ? 'bg-[#7c8fff] border-[#7c8fff]' 
                             : 'bg-transparent border-gray-600'
                         } group-hover:scale-125 transition-transform duration-300`}></div>
                         {index < experiences.length - 1 && (
-                          <div className="w-0.5 h-12 bg-gray-700 mt-2"></div>
+                          <div className="w-0.5 h-16 bg-gray-700 mt-2"></div>
                         )}
                       </div>
-                      <div className="flex-1 pb-6">
+                      <div className="flex-1 pb-8 min-w-0">
                         <div className="text-[#7c8fff] text-sm font-medium mb-1">{exp.year}</div>
-                        <h4 className="text-white font-medium mb-2">{exp.title}</h4>
-                        <p className="text-gray-400 text-sm leading-relaxed">{exp.description}</p>
+                        <h4 className="text-white font-medium mb-2 break-words">{exp.title}</h4>
+                        <p className="text-gray-400 text-sm leading-relaxed break-words">{exp.description}</p>
                       </div>
                     </div>
                   ))}
