@@ -90,7 +90,7 @@ const About: FC = () => {
                   <div className="text-gray-400 text-sm">Years Experience</div>
                 </div>
                 <div className="bg-[#1a1a2e]/60 backdrop-blur-sm p-6 rounded-xl border border-gray-800/50 text-center group hover:border-[#7c8fff]/30 transition-all duration-300">
-                  <div className="text-3xl md:text-4xl font-bold text-[#7c8fff] mb-2 group-hover:scale-110 transition-transform duration-300">15+</div>
+                  <div className="text-3xl md:text-4xl font-bold text-[#7c8fff] mb-2 group-hover:scale-110 transition-transform duration-300">Several</div>
                   <div className="text-gray-400 text-sm">Projects Built</div>
                 </div>
                 <div className="bg-[#1a1a2e]/60 backdrop-blur-sm p-6 rounded-xl border border-gray-800/50 text-center group hover:border-[#7c8fff]/30 transition-all duration-300">
