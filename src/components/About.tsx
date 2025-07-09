@@ -6,27 +6,17 @@ const About: FC = () => {
     { name: "TailwindCSS", level: 98, color: "#06B6D4" },
     { name: "JavaScript", level: 95, color: "#F7DF1E" },
     { name: "HTML/CSS", level: 100, color: "#E34F26" },
+    { name: "TypeScript", level: 90, color: "#3178C6" },
+    { name: "Node.js", level: 85, color: "#339933" },
   ];
 
-  const experiences = [
-    {
-      year: "2023-Present",
-      title: "Frontend Developer",
-      description: "Building modern web applications with React and other technologies.",
-      highlight: true
-    },
-    {
-      year: "2021-2022",
-      title: "Learning Phase",
-      description: "Mastering HTML, CSS, and JavaScript fundamentals",
-      highlight: false
-    },
-    {
-      year: "2020-2021",
-      title: "Started Journey",
-      description: "First steps into web development and programming",
-      highlight: false
-    }
+  const technologies = [
+    { name: "React", icon: "⚛️" },
+    { name: "TypeScript", icon: "📘" },
+    { name: "TailwindCSS", icon: "🎨" },
+    { name: "Node.js", icon: "🟢" },
+    { name: "Git", icon: "📝" },
+    { name: "Figma", icon: "🎯" },
   ];
 
   return (
@@ -59,56 +49,63 @@ const About: FC = () => {
             </p>
           </div>
 
-          {/* Main Content Grid */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 mb-20">
+          {/* Main Content */}
+          <div className="space-y-20">
             
-            {/* Left Column - Story & Stats */}
-            <div className="space-y-12">
+            {/* Story & Stats Section */}
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
               
-              {/* Personal Story */}
-              <div className="bg-gradient-to-br from-[#1a1a2e]/80 to-[#1a1a2e]/40 backdrop-blur-sm p-8 rounded-2xl border border-gray-800/50">
-                <h3 className="text-2xl font-medium text-white mb-6">My Journey</h3>
-                <div className="space-y-4 text-gray-300 leading-relaxed">
-                  <p>
-                    Started my web development journey in 2020, driven by curiosity and 
-                    a passion for creating things that live on the internet. What began 
-                    as simple HTML pages has evolved into building complex, interactive 
-                    web applications.
-                  </p>
-                  <p>
-                    I specialize in React ecosystem and modern JavaScript, with a keen 
-                    eye for design and user experience. Every project is an opportunity 
-                    to learn something new and push the boundaries of what's possible.
-                  </p>
+              {/* Personal Story - Takes 2 columns */}
+              <div className="lg:col-span-2">
+                <div className="bg-gradient-to-br from-[#1a1a2e]/80 to-[#1a1a2e]/40 backdrop-blur-sm p-8 rounded-2xl border border-gray-800/50 h-full">
+                  <h3 className="text-2xl font-medium text-white mb-6">My Journey</h3>
+                  <div className="space-y-4 text-gray-300 leading-relaxed">
+                    <p>
+                      Started my web development journey in 2020, driven by curiosity and 
+                      a passion for creating things that live on the internet. What began 
+                      as simple HTML pages has evolved into building complex, interactive 
+                      web applications.
+                    </p>
+                    <p>
+                      I specialize in React ecosystem and modern JavaScript, with a keen 
+                      eye for design and user experience. Every project is an opportunity 
+                      to learn something new and push the boundaries of what's possible.
+                    </p>
+                    <p>
+                      When I'm not coding, you'll find me exploring new technologies, 
+                      contributing to open source projects, or sharing knowledge with 
+                      the developer community.
+                    </p>
+                  </div>
                 </div>
               </div>
 
-              {/* Stats Grid */}
-              <div className="grid grid-cols-2 gap-6">
+              {/* Stats Grid - Takes 1 column */}
+              <div className="grid grid-cols-2 lg:grid-cols-1 gap-4">
                 <div className="bg-[#1a1a2e]/60 backdrop-blur-sm p-6 rounded-xl border border-gray-800/50 text-center group hover:border-[#7c8fff]/30 transition-all duration-300">
-                  <div className="text-3xl md:text-4xl font-bold text-[#7c8fff] mb-2 group-hover:scale-110 transition-transform duration-300">3+</div>
+                  <div className="text-3xl font-bold text-[#7c8fff] mb-2 group-hover:scale-110 transition-transform duration-300">3+</div>
                   <div className="text-gray-400 text-sm">Years Experience</div>
                 </div>
                 <div className="bg-[#1a1a2e]/60 backdrop-blur-sm p-6 rounded-xl border border-gray-800/50 text-center group hover:border-[#7c8fff]/30 transition-all duration-300">
-                  <div className="text-3xl md:text-4xl font-bold text-[#7c8fff] mb-2 group-hover:scale-110 transition-transform duration-300">Several</div>
+                  <div className="text-3xl font-bold text-[#7c8fff] mb-2 group-hover:scale-110 transition-transform duration-300">Several</div>
                   <div className="text-gray-400 text-sm">Projects Built</div>
                 </div>
                 <div className="bg-[#1a1a2e]/60 backdrop-blur-sm p-6 rounded-xl border border-gray-800/50 text-center group hover:border-[#7c8fff]/30 transition-all duration-300">
-                  <div className="text-3xl md:text-4xl font-bold text-[#7c8fff] mb-2 group-hover:scale-110 transition-transform duration-300">6+</div>
-                  <div className="text-gray-400 text-sm">Technologies</div>
+                  <div className="text-3xl font-bold text-[#7c8fff] mb-2 group-hover:scale-110 transition-transform duration-300">100%</div>
+                  <div className="text-gray-400 text-sm">Satisfaction</div>
                 </div>
                 <div className="bg-[#1a1a2e]/60 backdrop-blur-sm p-6 rounded-xl border border-gray-800/50 text-center group hover:border-[#7c8fff]/30 transition-all duration-300">
-                  <div className="text-3xl md:text-4xl font-bold text-[#7c8fff] mb-2 group-hover:scale-110 transition-transform duration-300">100%</div>
-                  <div className="text-gray-400 text-sm">Satisfaction</div>
+                  <div className="text-3xl font-bold text-[#7c8fff] mb-2 group-hover:scale-110 transition-transform duration-300">6+</div>
+                  <div className="text-gray-400 text-sm">Technologies</div>
                 </div>
               </div>
 
             </div>
 
-            {/* Right Column - Skills & Experience */}
-            <div className="space-y-12">
+            {/* Skills & Technologies Section */}
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
               
-              {/* Skills Section */}
+              {/* Technical Skills */}
               <div className="bg-gradient-to-br from-[#1a1a2e]/80 to-[#1a1a2e]/40 backdrop-blur-sm p-8 rounded-2xl border border-gray-800/50">
                 <h3 className="text-2xl font-medium text-white mb-8">Technical Skills</h3>
                 <div className="space-y-6">
@@ -133,91 +130,87 @@ const About: FC = () => {
                 </div>
               </div>
 
-              {/* Experience Timeline */}
+              {/* Technologies I Use */}
               <div className="bg-gradient-to-br from-[#1a1a2e]/80 to-[#1a1a2e]/40 backdrop-blur-sm p-8 rounded-2xl border border-gray-800/50">
-                <h3 className="text-2xl font-medium text-white mb-8">Experience Timeline</h3>
-                <div className="relative">
-                  {experiences.map((exp, index) => (
-                    <div key={index} className="relative pl-8 pb-8 last:pb-0 group">
-                      {/* Timeline line */}
-                      {index < experiences.length - 1 && (
-                        <div className="absolute left-2 top-6 w-0.5 h-full bg-gray-700"></div>
-                      )}
-                      
-                      {/* Timeline dot */}
-                      <div className="absolute left-0 top-2">
-                        <div className={`w-4 h-4 rounded-full border-2 ${
-                          exp.highlight 
-                            ? 'bg-[#7c8fff] border-[#7c8fff]' 
-                            : 'bg-transparent border-gray-600'
-                        } group-hover:scale-125 transition-transform duration-300`}></div>
+                <h3 className="text-2xl font-medium text-white mb-8">Technologies I Use</h3>
+                <div className="grid grid-cols-2 gap-4">
+                  {technologies.map((tech, index) => (
+                    <div 
+                      key={tech.name} 
+                      className="bg-[#0a0a13]/50 p-4 rounded-lg border border-gray-700/50 hover:border-[#7c8fff]/30 transition-all duration-300 hover:transform hover:scale-105 group"
+                      style={{ animationDelay: `${index * 100}ms` }}
+                    >
+                      <div className="text-2xl mb-2 group-hover:scale-110 transition-transform duration-300">
+                        {tech.icon}
                       </div>
-                      
-                      {/* Content */}
-                      <div>
-                        <div className="text-[#7c8fff] text-sm font-medium mb-1">{exp.year}</div>
-                        <h4 className="text-white font-medium mb-2">{exp.title}</h4>
-                        <p className="text-gray-400 text-sm leading-relaxed">{exp.description}</p>
-                      </div>
+                      <div className="text-white font-medium text-sm">{tech.name}</div>
                     </div>
                   ))}
+                </div>
+                
+                {/* Additional info */}
+                <div className="mt-6 p-4 bg-[#0a0a13]/30 rounded-lg border border-gray-700/30">
+                  <p className="text-gray-400 text-sm leading-relaxed">
+                    Always learning and exploring new technologies to stay current with 
+                    industry trends and best practices.
+                  </p>
                 </div>
               </div>
 
             </div>
-          </div>
 
-          {/* Services Section */}
-          <div className="mb-20">
-            <div className="text-center mb-12">
-              <h3 className="text-3xl md:text-4xl font-light text-white mb-4">What I Do</h3>
-              <p className="text-gray-400 text-lg">Services I provide to bring your ideas to life</p>
-            </div>
-            
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <div className="bg-gradient-to-br from-[#1a1a2e]/80 to-[#1a1a2e]/40 backdrop-blur-sm p-8 rounded-2xl border border-gray-800/50 hover:border-[#7c8fff]/30 transition-all duration-500 hover:transform hover:scale-105 group">
-                <div className="text-[#7c8fff] text-4xl mb-6 group-hover:scale-110 transition-transform duration-300">💻</div>
-                <h4 className="text-white text-xl mb-4 font-medium">Frontend Development</h4>
-                <p className="text-gray-400 leading-relaxed">
-                  Building responsive, interactive web applications using React, TypeScript, and modern CSS frameworks.
-                </p>
+            {/* Services Section */}
+            <div>
+              <div className="text-center mb-12">
+                <h3 className="text-3xl md:text-4xl font-light text-white mb-4">What I Do</h3>
+                <p className="text-gray-400 text-lg">Services I provide to bring your ideas to life</p>
               </div>
+              
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div className="bg-gradient-to-br from-[#1a1a2e]/80 to-[#1a1a2e]/40 backdrop-blur-sm p-8 rounded-2xl border border-gray-800/50 hover:border-[#7c8fff]/30 transition-all duration-500 hover:transform hover:scale-105 group">
+                  <div className="text-[#7c8fff] text-4xl mb-6 group-hover:scale-110 transition-transform duration-300">💻</div>
+                  <h4 className="text-white text-xl mb-4 font-medium">Frontend Development</h4>
+                  <p className="text-gray-400 leading-relaxed">
+                    Building responsive, interactive web applications using React, TypeScript, and modern CSS frameworks.
+                  </p>
+                </div>
 
-              <div className="bg-gradient-to-br from-[#1a1a2e]/80 to-[#1a1a2e]/40 backdrop-blur-sm p-8 rounded-2xl border border-gray-800/50 hover:border-[#7c8fff]/30 transition-all duration-500 hover:transform hover:scale-105 group">
-                <div className="text-[#7c8fff] text-4xl mb-6 group-hover:scale-110 transition-transform duration-300">🎨</div>
-                <h4 className="text-white text-xl mb-4 font-medium">UI/UX Design</h4>
-                <p className="text-gray-400 leading-relaxed">
-                  Creating intuitive user interfaces with attention to detail, accessibility, and user experience.
-                </p>
-              </div>
+                <div className="bg-gradient-to-br from-[#1a1a2e]/80 to-[#1a1a2e]/40 backdrop-blur-sm p-8 rounded-2xl border border-gray-800/50 hover:border-[#7c8fff]/30 transition-all duration-500 hover:transform hover:scale-105 group">
+                  <div className="text-[#7c8fff] text-4xl mb-6 group-hover:scale-110 transition-transform duration-300">🎨</div>
+                  <h4 className="text-white text-xl mb-4 font-medium">UI/UX Design</h4>
+                  <p className="text-gray-400 leading-relaxed">
+                    Creating intuitive user interfaces with attention to detail, accessibility, and user experience.
+                  </p>
+                </div>
 
-              <div className="bg-gradient-to-br from-[#1a1a2e]/80 to-[#1a1a2e]/40 backdrop-blur-sm p-8 rounded-2xl border border-gray-800/50 hover:border-[#7c8fff]/30 transition-all duration-500 hover:transform hover:scale-105 group">
-                <div className="text-[#7c8fff] text-4xl mb-6 group-hover:scale-110 transition-transform duration-300">⚡</div>
-                <h4 className="text-white text-xl mb-4 font-medium">Performance Optimization</h4>
-                <p className="text-gray-400 leading-relaxed">
-                  Optimizing web applications for speed, SEO, and exceptional user experience across all devices.
-                </p>
+                <div className="bg-gradient-to-br from-[#1a1a2e]/80 to-[#1a1a2e]/40 backdrop-blur-sm p-8 rounded-2xl border border-gray-800/50 hover:border-[#7c8fff]/30 transition-all duration-500 hover:transform hover:scale-105 group">
+                  <div className="text-[#7c8fff] text-4xl mb-6 group-hover:scale-110 transition-transform duration-300">⚡</div>
+                  <h4 className="text-white text-xl mb-4 font-medium">Performance Optimization</h4>
+                  <p className="text-gray-400 leading-relaxed">
+                    Optimizing web applications for speed, SEO, and exceptional user experience across all devices.
+                  </p>
+                </div>
               </div>
             </div>
-          </div>
 
-          {/* Call to Action */}
-          <div className="text-center">
-            <div className="bg-gradient-to-r from-[#7c8fff]/10 to-purple-500/10 backdrop-blur-sm p-12 rounded-3xl border border-[#7c8fff]/20">
-              <h3 className="text-3xl font-light text-white mb-4">Ready to work together?</h3>
-              <p className="text-gray-400 text-lg mb-8 max-w-2xl mx-auto">
-                Let's create something amazing. I'm always excited to take on new challenges 
-                and bring innovative ideas to life.
-              </p>
-              <a
-                href="#contact"
-                className="inline-block bg-[#7c8fff] text-black px-8 py-4 rounded-xl hover:bg-indigo-500 transition-all duration-300 font-medium hover:transform hover:scale-105 hover:shadow-lg hover:shadow-[#7c8fff]/25"
-              >
-                Let's Talk
-              </a>
+            {/* Call to Action */}
+            <div className="text-center">
+              <div className="bg-gradient-to-r from-[#7c8fff]/10 to-purple-500/10 backdrop-blur-sm p-12 rounded-3xl border border-[#7c8fff]/20">
+                <h3 className="text-3xl font-light text-white mb-4">Ready to work together?</h3>
+                <p className="text-gray-400 text-lg mb-8 max-w-2xl mx-auto">
+                  Let's create something amazing. I'm always excited to take on new challenges 
+                  and bring innovative ideas to life.
+                </p>
+                <a
+                  href="#contact"
+                  className="inline-block bg-[#7c8fff] text-black px-8 py-4 rounded-xl hover:bg-indigo-500 transition-all duration-300 font-medium hover:transform hover:scale-105 hover:shadow-lg hover:shadow-[#7c8fff]/25"
+                >
+                  Let's Talk
+                </a>
+              </div>
             </div>
-          </div>
 
+          </div>
         </div>
       </div>
     </div>
