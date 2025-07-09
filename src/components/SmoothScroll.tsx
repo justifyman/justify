@@ -9,7 +9,6 @@ const SmoothScroll: FC<SmoothScrollProps> = ({ children }) => {
   useEffect(() => {
     // Initialize Lenis
     const lenis = new Lenis({
-      smooth: true,
       mouseMultiplier: 1,
       smoothTouch: false,
       touchMultiplier: 2,
