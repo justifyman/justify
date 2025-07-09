@@ -6,41 +6,58 @@ interface SmoothScrollProps {
 
 const SmoothScroll: FC<SmoothScrollProps> = ({ children }) => {
   const scrollContainerRef = useRef<HTMLDivElement>(null);
+  const scrollPositionRef = useRef(0);
+  const targetScrollRef = useRef(0);
+  const velocityRef = useRef(0);
+  const animationFrameRef = useRef<number>();
 
   useEffect(() => {
     const scrollContainer = scrollContainerRef.current;
     if (!scrollContainer) return;
 
-    let isScrolling = false;
-    let scrollTimeout: NodeJS.Timeout;
+    // Smooth scrolling animation loop
+    const animate = () => {
+      const current = scrollPositionRef.current;
+      const target = targetScrollRef.current;
+      const diff = target - current;
+
+      // Easing function for smooth deceleration
+      const ease = 0.08;
+      const velocity = diff * ease;
+      
+      // Apply momentum with friction
+      velocityRef.current += velocity;
+      velocityRef.current *= 0.9; // Friction
+      
+      scrollPositionRef.current += velocityRef.current;
+
+      // Update scroll position
+      scrollContainer.scrollTop = scrollPositionRef.current;
+
+      // Continue animation if there's still movement
+      if (Math.abs(diff) > 0.5 || Math.abs(velocityRef.current) > 0.1) {
+        animationFrameRef.current = requestAnimationFrame(animate);
+      }
+    };
 
     const handleWheel = (e: WheelEvent) => {
       e.preventDefault();
       
-      const scrollAmount = e.deltaY * 0.8; // Reduce sensitivity for smoother feel
+      // Adjust scroll target based on wheel input
+      const scrollSpeed = 1.2;
+      targetScrollRef.current += e.deltaY * scrollSpeed;
       
-      scrollContainer.scrollBy({
-        top: scrollAmount,
-        behavior: 'auto' // We'll handle the smoothness with CSS
-      });
-
-      // Add momentum effect
-      if (!isScrolling) {
-        isScrolling = true;
-        scrollContainer.style.scrollBehavior = 'auto';
+      // Clamp to valid scroll range
+      const maxScroll = scrollContainer.scrollHeight - scrollContainer.clientHeight;
+      targetScrollRef.current = Math.max(0, Math.min(targetScrollRef.current, maxScroll));
+      
+      // Start animation if not already running
+      if (!animationFrameRef.current) {
+        animationFrameRef.current = requestAnimationFrame(animate);
       }
-
-      // Clear existing timeout
-      clearTimeout(scrollTimeout);
-      
-      // Set timeout to end scrolling state
-      scrollTimeout = setTimeout(() => {
-        isScrolling = false;
-        scrollContainer.style.scrollBehavior = 'smooth';
-      }, 150);
     };
 
-    // Handle keyboard navigation
+    // Handle keyboard navigation with smooth scrolling
     const handleKeyDown = (e: KeyboardEvent) => {
       const scrollAmount = window.innerHeight * 0.8;
       
@@ -48,25 +65,36 @@ const SmoothScroll: FC<SmoothScrollProps> = ({ children }) => {
         case 'ArrowDown':
         case 'PageDown':
           e.preventDefault();
-          scrollContainer.scrollBy({ top: scrollAmount, behavior: 'smooth' });
+          targetScrollRef.current += scrollAmount;
           break;
         case 'ArrowUp':
         case 'PageUp':
           e.preventDefault();
-          scrollContainer.scrollBy({ top: -scrollAmount, behavior: 'smooth' });
+          targetScrollRef.current -= scrollAmount;
           break;
         case 'Home':
           e.preventDefault();
-          scrollContainer.scrollTo({ top: 0, behavior: 'smooth' });
+          targetScrollRef.current = 0;
           break;
         case 'End':
           e.preventDefault();
-          scrollContainer.scrollTo({ top: scrollContainer.scrollHeight, behavior: 'smooth' });
+          targetScrollRef.current = scrollContainer.scrollHeight - scrollContainer.clientHeight;
           break;
+        default:
+          return;
+      }
+      
+      // Clamp to valid range
+      const maxScroll = scrollContainer.scrollHeight - scrollContainer.clientHeight;
+      targetScrollRef.current = Math.max(0, Math.min(targetScrollRef.current, maxScroll));
+      
+      // Start animation
+      if (!animationFrameRef.current) {
+        animationFrameRef.current = requestAnimationFrame(animate);
       }
     };
 
-    // Handle anchor links
+    // Handle anchor links with smooth scrolling
     const handleAnchorClick = (e: Event) => {
       const target = e.target as HTMLAnchorElement;
       if (target.tagName === 'A' && target.getAttribute('href')?.startsWith('#')) {
@@ -76,24 +104,84 @@ const SmoothScroll: FC<SmoothScrollProps> = ({ children }) => {
         
         if (targetElement) {
           const offsetTop = targetElement.offsetTop;
-          scrollContainer.scrollTo({
-            top: offsetTop,
-            behavior: 'smooth'
-          });
+          targetScrollRef.current = offsetTop;
+          
+          if (!animationFrameRef.current) {
+            animationFrameRef.current = requestAnimationFrame(animate);
+          }
         }
       }
     };
+
+    // Initialize scroll position
+    scrollPositionRef.current = scrollContainer.scrollTop;
+    targetScrollRef.current = scrollContainer.scrollTop;
 
     // Add event listeners
     scrollContainer.addEventListener('wheel', handleWheel, { passive: false });
     window.addEventListener('keydown', handleKeyDown);
     document.addEventListener('click', handleAnchorClick);
 
+    // Handle touch scrolling for mobile
+    let touchStartY = 0;
+    let touchStartTime = 0;
+
+    const handleTouchStart = (e: TouchEvent) => {
+      touchStartY = e.touches[0].clientY;
+      touchStartTime = Date.now();
+    };
+
+    const handleTouchMove = (e: TouchEvent) => {
+      e.preventDefault();
+      const touchY = e.touches[0].clientY;
+      const deltaY = touchStartY - touchY;
+      
+      targetScrollRef.current += deltaY * 2;
+      touchStartY = touchY;
+      
+      const maxScroll = scrollContainer.scrollHeight - scrollContainer.clientHeight;
+      targetScrollRef.current = Math.max(0, Math.min(targetScrollRef.current, maxScroll));
+      
+      if (!animationFrameRef.current) {
+        animationFrameRef.current = requestAnimationFrame(animate);
+      }
+    };
+
+    const handleTouchEnd = (e: TouchEvent) => {
+      const touchEndTime = Date.now();
+      const touchDuration = touchEndTime - touchStartTime;
+      const touchEndY = e.changedTouches[0].clientY;
+      const touchDistance = touchStartY - touchEndY;
+      
+      // Add momentum based on swipe velocity
+      if (touchDuration < 300 && Math.abs(touchDistance) > 30) {
+        const velocity = touchDistance / touchDuration;
+        targetScrollRef.current += velocity * 200;
+        
+        const maxScroll = scrollContainer.scrollHeight - scrollContainer.clientHeight;
+        targetScrollRef.current = Math.max(0, Math.min(targetScrollRef.current, maxScroll));
+        
+        if (!animationFrameRef.current) {
+          animationFrameRef.current = requestAnimationFrame(animate);
+        }
+      }
+    };
+
+    scrollContainer.addEventListener('touchstart', handleTouchStart, { passive: false });
+    scrollContainer.addEventListener('touchmove', handleTouchMove, { passive: false });
+    scrollContainer.addEventListener('touchend', handleTouchEnd, { passive: false });
+
     return () => {
       scrollContainer.removeEventListener('wheel', handleWheel);
       window.removeEventListener('keydown', handleKeyDown);
       document.removeEventListener('click', handleAnchorClick);
-      clearTimeout(scrollTimeout);
+      scrollContainer.removeEventListener('touchstart', handleTouchStart);
+      scrollContainer.removeEventListener('touchmove', handleTouchMove);
+      scrollContainer.removeEventListener('touchend', handleTouchEnd);
+      
+      if (animationFrameRef.current) {
+        cancelAnimationFrame(animationFrameRef.current);
+      }
     };
   }, []);
 
@@ -103,9 +191,8 @@ const SmoothScroll: FC<SmoothScrollProps> = ({ children }) => {
       className="smooth-scroll-container"
       style={{
         height: '100vh',
-        overflowY: 'scroll',
+        overflowY: 'hidden', // Hide native scrollbar since we're handling it
         overflowX: 'hidden',
-        scrollBehavior: 'smooth'
       }}
     >
       {children}
