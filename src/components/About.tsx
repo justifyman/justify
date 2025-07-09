@@ -2,12 +2,10 @@ import { FC } from "react";
 
 const About: FC = () => {
   const skills = [
-    { name: "React", level: 95, color: "#61DAFB" },
-    { name: "TypeScript", level: 88, color: "#3178C6" },
-    { name: "TailwindCSS", level: 92, color: "#06B6D4" },
-    { name: "JavaScript", level: 90, color: "#F7DF1E" },
-    { name: "HTML/CSS", level: 95, color: "#E34F26" },
-    { name: "Node.js", level: 75, color: "#339933" },
+    { name: "React", level: 97, color: "#61DAFB" },
+    { name: "TailwindCSS", level: 98, color: "#06B6D4" },
+    { name: "JavaScript", level: 95, color: "#F7DF1E" },
+    { name: "HTML/CSS", level: 100, color: "#E34F26" },
   ];
 
   const experiences = [
