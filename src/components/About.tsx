@@ -10,7 +10,7 @@ const About: FC = () => {
 
   const experiences = [
     {
-      year: "2022-Present",
+      year: "2023-Present",
       title: "Frontend Developer",
       description: "Building modern web applications with React and TypeScript",
       highlight: true
