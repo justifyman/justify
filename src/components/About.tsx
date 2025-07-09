@@ -12,7 +12,7 @@ const About: FC = () => {
     {
       year: "2023-Present",
       title: "Frontend Developer",
-      description: "Building modern web applications with React and TypeScript",
+      description: "Building modern web applications with React and other technologies.",
       highlight: true
     },
     {
