@@ -1,7 +1,8 @@
 @import "tailwindcss";
 
-html {
-  scroll-behavior: smooth;
+html, body {
+  overflow: hidden;
+  height: 100%;
 }
 
 @keyframes fade-in {
